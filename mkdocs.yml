@@ -1,0 +1,16 @@
+site_name: wmax641's docs
+site_url: https://clueless.engineer/docs/
+nav:
+  - Linux:
+    - "Certificates and OpenSSL" : "linux/certs.md"
+    - "Wireguard" : "linux/wireguard.md"
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: deep purple
+    accent: purple
+  navigation_depth: 3
+  features:
+    - navigation.instant
+    - navigation.indexes
