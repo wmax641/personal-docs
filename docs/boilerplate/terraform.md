@@ -13,10 +13,7 @@ init:
 		-backend-config="key=${BASE_NAME}" \
 		-backend-config="region=${REGION}"
 
-fmtchk:
-	terraform fmt -write=false -diff=true -check=true
-
-fmtfix:
+fmt:
 	terraform fmt -write=true --recursive
 
 validate:
@@ -93,6 +90,7 @@ resource "aws_iam_role" "lambda_logs_role" {
   ]
   tags = merge({ "Name" = "${var.base_name}-LambdamyscriptRole" }, var.common_tags)
 }
+
 data "aws_iam_policy_document" "lambda_cloudwatch_policy_doc" {
   statement {
     actions = ["logs:CreateLogGroup"]
