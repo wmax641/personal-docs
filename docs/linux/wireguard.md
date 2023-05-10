@@ -42,7 +42,7 @@ umask 077; wg genkey | tee server.privatekey | wg pubkey > server.publickey
 ```
 
 Create `/etc/wireguard/wg0.conf`, and fill in the placeholder values based on the gerneated private key:
-```
+``` ini
 [Interface]
 Address = 10.0.0.1/24
 PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -A FORWARD -o %i -j ACCEPT; iptables -t nat -A POSTROUTING -o <INTERFACE> -j MASQUERADE
@@ -61,7 +61,7 @@ umask 077; wg genpsk > client.preshared
 ```
 
 Create `/etc/wireguard/wg0.conf`, and fill in the placeholder values based ont he gereanted keys, and details of the sever:
-```
+``` ini
 [Interface]
 Address = 10.0.0.100/24
 PrivateKey = <client.privatekey>
@@ -81,7 +81,7 @@ nmcli connection import type wireguard file /etc/wireguard/wg0.conf
 
 ### Server Again
 Append the below peer details into `/etc/wireguard/wg0.conf`
-```
+``` ini
 [Peer]
 PublicKey = <client.publickey>
 AllowedIPs = 10.0.0.100/32
@@ -89,7 +89,7 @@ PresharedKey = <client.preshared>
 ```
 
 The resulting `/etc/wireguard/wg0.conf` on the server should now look like this:
-```
+``` ini
 [Interface]
 Address = 10.0.0.1/24
 PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -A FORWARD -o %i -j ACCEPT; iptables -t nat -A POSTROUTING -o <INTERFACE> -j MASQUERADE

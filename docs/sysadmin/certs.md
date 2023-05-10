@@ -41,7 +41,7 @@ openssl req -new -key server.key -out server.csr
 
 ### Generate SAN CSR
 First create an openssl config file; __openssl.cnf__:
-```
+``` ini
 [ req ]
 distinguished_name  = dn
 req_extensions      = req_ext
