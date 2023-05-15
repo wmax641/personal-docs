@@ -62,4 +62,16 @@ subjectAltName = @alt_names
 DNS.1 = wmax641.website
 DNS.2 = *.wmax641.website
 ```
-Then Generate CSR (`openssl req...` ) with `-config openssl.cnf`
+Then generate CSR using the config file
+```
+openssl req -new -key server.key -out server.csr -config openssl.cnf
+
+```
+
+## Let's Encrypt
+### Sign CSR
+Install `certbot` package, prepare a CSR, then run the `certbot` utility
+```
+certbot certonly --csr server.csr --manual --preferred-challenge dns
+```
+
