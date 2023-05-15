@@ -1,5 +1,21 @@
 # Certificates and OpenSSL Cheatsheet
 
+## View Cert Info
+### Local cert
+For CSRs, replace `x509` with `req`
+```
+openssl x509 -in CERT.crt -text -noout
+```
+### Cert Chain/bundle
+Bundle of multiple PEM certificates in the same file
+```
+# Full output
+openssl crl2pkcs7 -nocrl -certfile CHAIN.crt | openssl pkcs7 -print_certs -text -noout
+
+# Just subject and issuer
+openssl crl2pkcs7 -nocrl -certfile CHAIN.crt | openssl pkcs7 -print_certs -noout
+```
+
 ## s_client and Connections
 ### Show Cert Chain
 ```
