@@ -2,8 +2,7 @@
 
 ### Makefile
 ``` basemake
-IDENTITY=$(shell aws sts get-caller-identity | jq -r '.Arn' | cut -d':' -f5-)
-ACCOUNT=$(shell echo "$(IDENTITY)" | cut -d":" -f1)
+ACCOUNT=$(shell aws sts get-caller-identity --query 'Account' --output text)
 BASE_NAME=$(shell basename $(CURDIR))
 REGION="ap-southeast-2"
 
@@ -12,6 +11,10 @@ init:
 		-backend-config="bucket=tf-${ACCOUNT}" \
 		-backend-config="key=${BASE_NAME}" \
 		-backend-config="region=${REGION}"
+
+inits3:
+	@echo -n "Create s3 bucket: 'tf-${ACCOUNT}'?   [y/N] " && read ans && [ $${ans:-N} = y ]
+	aws s3api create-bucket --bucket "tf-${ACCOUNT}" --region "${REGION}" --create-bucket-configuration LocationConstraint="${REGION}"
 
 fmt:
 	terraform fmt -write=true --recursive
@@ -40,7 +43,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 4.65"
+      version = ">= 5.4.0"
     }
   }
 }
