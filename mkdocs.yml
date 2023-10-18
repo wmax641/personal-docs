@@ -9,6 +9,7 @@ nav:
     - "Certificates and OpenSSL" : "sysadmin/certs.md"
   - Boilerplate Code:
     - "Terraform" : "boilerplate/terraform.md"
+    - "Terraform (aliyun)" : "boilerplate/terraform_aliyun.md"
 theme:
   name: material
   logo: img/favicon.ico
