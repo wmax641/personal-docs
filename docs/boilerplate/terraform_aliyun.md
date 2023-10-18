@@ -38,25 +38,28 @@ destroy:
 #### main.tf
 ``` terraform
 terraform {
-  backend "s3" {
+  backend "oss" {
   }
 
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = ">= 5.4.0"
+    alicloud = {
+      source  = "aliyun/alicloud"
+      version = "1.211.1"
     }
   }
 }
 
-provider "aws" {
-  region = "ap-southeast-2"
+provider "alicloud" {
+  region = "cn-hongkong"
 }
+
 ```
 #### data.tf
 ``` terraform
-data "aws_region" "current" {}
-data "aws_caller_identity" "current" {}
+data "alicloud_regions" "current_region_ds" {
+  current = true
+}
+data "alicloud_account" "current" {}
 ```
 #### variables.tf
 ``` terraform
