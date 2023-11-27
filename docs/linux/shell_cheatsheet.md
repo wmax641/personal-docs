@@ -17,6 +17,14 @@ date | cut -d' ' -f4
 for i in {1..255}; do nc -cv 10.100.56.$i 22; done
 ```
 
+#### Loop over list in file
+```
+cat list.txt | while read line; do echo "$line"; done
+```
+```
+while read line; do echo "$line"; done < list.txt
+```
+
 ## Complex
 #### Loop over output
 ```
