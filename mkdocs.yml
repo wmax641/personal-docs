@@ -4,6 +4,7 @@ site_author: wmax641
 site_description: wmax641's personal docs and notes
 nav:
   - Linux Systems Administration:
+    - "Shell cheatsheet" : "linux/shell_cheatsheet.md"
     - "Wireguard" : "linux/wireguard.md"
   - Systems Administration:
     - "Certificates and OpenSSL" : "sysadmin/certs.md"
