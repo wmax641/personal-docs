@@ -1,7 +1,7 @@
 # Dockerfile Templates
 
 ## Generic Dockerfile
-```
+```docker
 FROM alpine:latest
 
 #LABEL tag_key="tag_value"

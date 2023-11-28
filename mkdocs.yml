@@ -3,13 +3,14 @@ site_url: https://wmax641.website/personal-docs/
 site_author: wmax641
 site_description: wmax641's personal docs and notes
 nav:
-  - Linux Systems Administration:
-    - "Shell cheatsheet" : "linux/shell_cheatsheet.md"
-    - "Wireguard" : "linux/wireguard.md"
   - Systems Administration:
-    - "Certificates and OpenSSL" : "sysadmin/certs.md"
+    - "Shell cheatsheet" : "sysadmin/shell_cheatsheet.md"
+    - "jq cheatsheet" : "sysadmin/jq_cheatsheet.md"
     - "Docker" : "sysadmin/docker.md"
     - "K8s" : "sysadmin/k8s.md"
+    - "Certificates and OpenSSL" : "sysadmin/certs.md"
+  - Linux Systems Administration:
+    - "Wireguard" : "linux/wireguard.md"
   - Boilerplate Code:
     - "Dockerfile" : "boilerplate/docker.md"
     - "Terraform (AWS)" : "boilerplate/terraform.md"
