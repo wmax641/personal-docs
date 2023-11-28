@@ -43,24 +43,4 @@ docker push wmax641/test-app:latest
 ```
 
 ### Dockerfile Boilerplate
-```
-FROM alpine:latest
-
-ARG TZ=Australia/Sydney
-
-RUN apk update --no-cache --purge \
-    && apk upgrade --no-cache \
-    && cp /usr/share/zoneinfo/${TZ} /etc/localtime \
-    #&& apk add --no-cache python3 py3-pip tzdata
-
-WORKDIR /app
-
-COPY app.py ./
-COPY config.yml ./
-
-RUN adduser -D user -u 1337
-USER user
-
-ENTRYPOINT ["./app.py", "--config", "config.yml"]
-
-```
+See [Docker Boilerplate](../boilerplate/docker.md)
