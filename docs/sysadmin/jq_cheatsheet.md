@@ -43,7 +43,7 @@ jq '.items[] | .metadata.name'
 "kubes-bootcamp-7c5b8c477c-6bkvc"
 ```
 
-Greedy and careless grab all attribute values for all items
+Greedy and careless grab specified attribute value for all items
 ```bash
 jq '.items[].spec.containers[].image'
 jq '.items[] | .spec.containers[].image'
@@ -51,6 +51,33 @@ jq '.items[] | .spec.containers[].image'
 "wmax641/test-app:latest"
 "kicbase/echo-server:1.0"
 "gcr.io/google-samples/kubernetes-bootcamp:v1"
+```
+Extract multiple attribute values
+```bash
+jq '.items[].spec.containers[] | {name, image}'
+{
+  "name": "bar-app",
+  "image": "kicbase/echo-server:1.0"
+}
+{
+  "name": "wma-test-app",
+  "image": "wmax641/test-app:latest"
+}
+{
+  "name": "foo-app",
+  "image": "kicbase/echo-server:1.0"
+}
+{
+  "name": "kubes-bootcamp",
+  "image": "gcr.io/google-samples/kubernetes-bootcamp:v1"
+}
+```
+```bash
+jq '.items[].spec.containers[] | {name, image} | join(",")'
+"bar-app,kicbase/echo-server:1.0"
+"wma-test-app,wmax641/test-app:latest"
+"foo-app,kicbase/echo-server:1.0"
+"kubes-bootcamp,gcr.io/google-samples/kubernetes-bootcamp:v1"
 ```
 
 Slice an array (similar to python indexing). Outputs into a separate list, so have to re-reference the new list
@@ -60,3 +87,23 @@ jq '.items[0:2] | .[].metadata.name'
 "foo-app"
 ```
 ## Functions
+Get length of an array
+```bash
+jq '.items[].spec.containers | length'
+2
+1
+1
+```
+Get keys for attribute
+```bash
+jq '.items[1].spec.containers[0] | keys '
+[
+  "image",
+  "imagePullPolicy",
+  "name",
+  "resources",
+  "terminationMessagePath",
+  "terminationMessagePolicy",
+  "volumeMounts"
+]
+```
