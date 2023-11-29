@@ -43,4 +43,4 @@ docker push wmax641/test-app:latest
 ```
 
 ### Dockerfile Boilerplate
-See [Docker Boilerplate](../boilerplate/docker.md)
+See [Docker Boilerplate](../patterns/docker.md)

@@ -6,15 +6,15 @@ nav:
   - Systems Administration:
     - "Shell cheatsheet" : "sysadmin/shell_cheatsheet.md"
     - "jq cheatsheet" : "sysadmin/jq_cheatsheet.md"
-    - "Docker" : "sysadmin/docker.md"
-    - "K8s" : "sysadmin/k8s.md"
     - "Certificates and OpenSSL" : "sysadmin/certs.md"
-  - Linux Systems Administration:
-    - "Wireguard" : "linux/wireguard.md"
-  - Boilerplate Code:
-    - "Dockerfile" : "boilerplate/docker.md"
-    - "Terraform (AWS)" : "boilerplate/terraform.md"
-    - "Terraform (aliyun)" : "boilerplate/terraform_aliyun.md"
+  - Systems Engineering:
+    - "Docker" : "syseng/docker.md"
+    - "K8s" : "syseng/k8s.md"
+    - "Wireguard" : "syseng/wireguard.md"
+  - Patterns:
+    - "Dockerfile" : "patterns/docker.md"
+    - "Terraform (AWS)" : "patterns/terraform.md"
+    - "Terraform (aliyun)" : "patterns/terraform_aliyun.md"
 theme:
   name: material
   logo: img/favicon.ico
