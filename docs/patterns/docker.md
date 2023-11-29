@@ -12,8 +12,8 @@ ARG TZ=Australia/Sydney
 
 RUN apk update --no-cache --purge \
     && apk upgrade --no-cache \
-    && cp /usr/share/zoneinfo/${TZ} /etc/localtime \
-    #&& apk add --no-cache python3 py3-pip tzdata
+    && apk add --no-cache python3 py3-pip tzdata \
+    && cp /usr/share/zoneinfo/${TZ} /etc/localtime
 
 WORKDIR /app
 

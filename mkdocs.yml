@@ -9,7 +9,7 @@ nav:
     - "Certificates and OpenSSL" : "sysadmin/certs.md"
   - Systems Engineering:
     - "Docker" : "syseng/docker.md"
-    - "K8s" : "syseng/k8s.md"
+    - "Kubernetes/K8s" : "syseng/k8s.md"
     - "Wireguard" : "syseng/wireguard.md"
   - Patterns:
     - "Dockerfile" : "patterns/docker.md"

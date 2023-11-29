@@ -1,4 +1,4 @@
-# `bash` cheatsheet
+# `bash` / `sh` cheatsheet
 
 ## Basic
 #### Cut specific column output
