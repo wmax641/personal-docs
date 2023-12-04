@@ -13,6 +13,7 @@ nav:
     - "Wireguard" : "syseng/wireguard.md"
   - Patterns:
     - "Dockerfile" : "patterns/docker.md"
+    - "Kubernetes/K8s" : "patterns/k8s.md"
     - "Terraform (AWS)" : "patterns/terraform.md"
     - "Terraform (aliyun)" : "patterns/terraform_aliyun.md"
 theme:

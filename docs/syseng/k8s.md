@@ -37,7 +37,17 @@ kubectl get pods -l KEY=VALUE -o json | jq '.items[] |
     .spec.containers[] | {"pod":$POD_NAME, name, image}'
 ```
 
+#### Refresh Pods/Deployment
+```bash
+kubectl rollout restart deployment/my-app
+```
+
 ## Architecture
 ### Services
 **NodePort** - Exposes the service on each Node's IP at a static port ("NodePort")
 ![NodePort](../img/k8s-nodeport.jpg)
+
+## Build
+### Patterns
+See [Kubernetes Patterns](../patterns/k8s.md)
+

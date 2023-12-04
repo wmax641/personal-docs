@@ -42,5 +42,5 @@ docker build . -t wmax641/test-app:latest
 docker push wmax641/test-app:latest
 ```
 
-### Dockerfile Boilerplate
-See [Docker Boilerplate](../patterns/docker.md)
+### Dockerfile Patterns
+See [Dockerfile Pattern](../patterns/docker.md)
