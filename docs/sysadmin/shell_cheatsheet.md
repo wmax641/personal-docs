@@ -4,7 +4,7 @@
 #### Cut specific column output
 `$0` will get the whole line, `$n` will get the n'th column
 ```bash
-ls -l | awk '{$2}'
+ls -l | awk '{print $2}'
 ```
 
 If delimiter is predictable, can also use `cut`

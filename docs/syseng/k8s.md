@@ -51,3 +51,10 @@ kubectl rollout restart deployment/my-app
 ### Patterns
 See [Kubernetes Patterns](../patterns/k8s.md)
 
+### Dry Run
+Helpful to generate K8S YAML config files
+
+This example creates a config map from actual file from the local system. K8S ConfigMap YAML config files don't support file system references, so can use this to generate config
+```bash
+kubectl create configmap --dry-run=client my-test-config-map --from-file=mail-app.yml --output yaml
+```

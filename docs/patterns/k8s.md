@@ -34,7 +34,7 @@ spec:
       maxSurge: 1
       maxUnavailable: 1
 ```
-## Env variables and ConfigMap
+## ConfigMap and environment var 
 ### Key Value pairs
 Includes declaration:
 
@@ -105,6 +105,39 @@ data:
     some_var:1234
     #some_text asdf qwerty
 ```
+### Secrets
+Similar concept to `ConfigMap`, but configuration slightly different;
+
+This mounts a hard-coded base64 encoded secret file to `/secrets/.secret`
+And also a plain text file to `/secrets/password`
+```yaml
+...
+spec:
+  containers:
+  - name: my-app-sidecar
+    image: alpine:latest
+    command: ['sh', '-c', 'env && cat /config/config.yml  && sleep 3600']
+    volumeMounts:
+    - mountPath: /secrets
+      name: secret-volume
+
+  volumes:
+  - name: secret-volume
+    secret:
+      secretName: my-app-secret
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: my-app-secret
+data:
+  .secret: SGVsbG8gV29ybGQhIDE=
+stringData:
+  password: p@ssw0rd!
+
+```
+
+
 ## Services
 ### NodePort
 ```yaml
