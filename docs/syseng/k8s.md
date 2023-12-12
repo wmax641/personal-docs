@@ -1,6 +1,12 @@
 # Kubernetes / K8s
 
 ## Operations
+ℹ️  There's also an official K8S cheatsheet [here!](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+
+#### Set Default Namespace
+```bash
+kubectl config set-context --current --namespace=my-namespace
+```
 #### Get pods with label
 ```bash
 kubectl get pods -l KEY=VALUE
@@ -44,7 +50,8 @@ kubectl rollout restart deployment/my-app
 
 ## Architecture
 ### Services
-**NodePort** - Exposes the service on each Node's IP at a static port ("NodePort")
+#### NodePort 
+Exposes the service on each Node's IP at a static port ("NodePort")
 ![NodePort](../img/k8s-nodeport.jpg)
 
 ## Build
@@ -52,9 +59,28 @@ kubectl rollout restart deployment/my-app
 See [Kubernetes Patterns](../patterns/k8s.md)
 
 ### Dry Run
-Helpful to generate K8S YAML config files
+Helpful to generate K8S YAML config files of ConfigMaps of raw file data as the YAML config for ConfigMap does not support file/path references.
 
-This example creates a config map from actual file from the local system. K8S ConfigMap YAML config files don't support file system references, so can use this to generate config
+This example creates a ConfigMap YAML config file by referencing the content of an actual file (`config.ini`) from the local system. 
 ```bash
-kubectl create configmap --dry-run=client my-test-config-map --from-file=mail-app.yml --output yaml
+cat config.ini
+[defualt]
+config0 a
+config1 b
+```
+```bash
+kubectl create cm --dry-run=client test-cm --from-file=config.ini --output yaml
+```
+```ini
+apiVersion: v1
+data:
+  config.ini: |
+    [defualt]
+    config0 a
+    config1 b
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: test-cm
+
 ```

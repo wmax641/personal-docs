@@ -159,3 +159,20 @@ spec:
       nodePort: 30003
 ---
 ```
+
+## Namespace Setup
+Sets up a namespace called `my-namespace` with various PodSecurity config
+```yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: my-namespace
+  labels:
+    pod-security.kubernetes.io/enforce: baseline
+    pod-security.kubernetes.io/enforce-version: v1.28
+    pod-security.kubernetes.io/audit: restricted
+    pod-security.kubernetes.io/audit-version: v1.28
+    pod-security.kubernetes.io/warn: restricted
+    pod-security.kubernetes.io/warn-version: v1.28
+
+```
