@@ -25,6 +25,11 @@ cat list.txt | while read line; do echo "$line"; done
 while read line; do echo "$line"; done < list.txt
 ```
 
+#### Generate Random String
+```bash
+tr -dc a-zA-Z0-9 < /dev/random | head -c 18
+```
+
 ## Complex
 #### Loop over output
 ```bash
