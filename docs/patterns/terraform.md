@@ -2,9 +2,9 @@
 
 ### Makefile
 ``` basemake
-ACCOUNT=$(shell aws sts get-caller-identity --query 'Account' --output text)
-BASE_NAME=$(shell basename $(CURDIR))
-REGION="ap-southeast-2"
+ACCOUNT ?= $(shell aws sts get-caller-identity --query 'Account' --output text)
+BASE_NAME ?= $(shell basename $(CURDIR))
+REGION ?= "ap-southeast-2"
 
 init:
 	terraform init \
