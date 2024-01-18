@@ -11,4 +11,32 @@ Use [wmax641/wap-iam-accounts](https://github.com/wmax641/wap-iam-accounts) modu
 
 ### Initial Setup and Seed Role
 
-This needs to be deployed as admin to set up the `IAMSeedRole` [wmax641/wap-iam-seed-role](https://github.com/wmax641/wap-iam-seed-role)
+This first needs to be deployed as admin to set up the `IAMSeedRole` [wmax641/wap-iam-seed-role](https://github.com/wmax641/wap-iam-seed-role)
+
+Once deployed, the `IAMSeedRole` has a role assumption policy like below that allows it to be assumed from a Github Actions deployment from the [wmax641/wap-iam-accounts](https://github.com/wmax641/wap-iam-accounts) repo
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "Federated": "arn:aws:iam::071440211637:oidc-provider/token.actions.githubusercontent.com"
+            },
+            "Action": "sts:AssumeRoleWithWebIdentity",
+            "Condition": {
+                "StringEquals": {
+                    "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
+                },
+                "StringLike": {
+                    "token.actions.githubusercontent.com:sub": [
+                        "repo:wmax641/wap-iam-accounts:environment:production",
+                        "repo:wmax641/wap-iam-accounts:environment:development"
+                    ]
+                }
+            }
+        }
+    ]
+}
+```
