@@ -9,6 +9,10 @@ Use [wmax641/wap-iam-accounts](https://github.com/wmax641/wap-iam-accounts) modu
 
 ### Create Roles
 
+Follow the example in [wmax641/wap-iam-accounts](https://github.com/wmax641/wap-iam-accounts)/role_dummy.tf.example.
+
+For deploy role, need to include `create_deploy_role = true`
+
 ### Initial Setup and Seed Role
 
 This first needs to be deployed as admin to set up the `IAMSeedRole` [wmax641/wap-iam-seed-role](https://github.com/wmax641/wap-iam-seed-role)
