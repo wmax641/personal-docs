@@ -17,6 +17,7 @@ nav:
     - "Kubernetes/K8s" : "patterns/k8s.md"
     - "Terraform (AWS)" : "patterns/terraform.md"
     - "Terraform (aliyun)" : "patterns/terraform_aliyun.md"
+    - "Personal Config" : "patterns/personal_config.md"
   - wmax641 App Platform (WAP):
     - "IAM and Accounts" : "wap/iam_accounts.md"
     - "Legacy IAM State" : "wap/iam_legacy.md"
