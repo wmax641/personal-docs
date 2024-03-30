@@ -20,6 +20,7 @@ nav:
     - "Personal Config" : "patterns/personal_config.md"
   - wmax641 App Platform (WAP):
     - "IAM and Accounts" : "wap/iam_accounts.md"
+    - "Terraform Bootstrap" : "wap/tf_bootstrap.md"
     - "Legacy IAM State" : "wap/iam_legacy.md"
 theme:
   name: material

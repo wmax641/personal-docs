@@ -2,45 +2,26 @@
 Identity and Access Management, and Account access for the wmax641 app platform (WAP)
 
 ## Architecture and Design
+![IAM Architecture](../img/iam_architecture.png)
 
 ## Operation
 
-Use [wmax641/wap-iam-accounts](https://github.com/wmax641/wap-iam-accounts) module
+#### Deploy Role
+This role should be used by Github Actions to create and deploy AWS resources.
+
+Is meant to be assumed by Github Action's web identity conditional that it comes from a particular repository and environment. This role should be given permissions to create and modify AWS resources.
+
+#### Service Role
+Is any sort of IAM role that may be used by a particular system (as opposed to being assumed by Github Actions)
 
 ### Create Roles
 
 Follow the example in [wmax641/wap-iam-accounts](https://github.com/wmax641/wap-iam-accounts)/role_dummy.tf.example.
 
-For deploy role, need to include `create_deploy_role = true`
+For deploy role, need to set `create_deploy_role = true`
 
+Very important to set the correct `used_by_repo` variable, as the Deploy Role is dependent on this value for its conditional access.
+
+## Development
 ### Initial Setup and Seed Role
-
-This first needs to be deployed as admin to set up the `IAMSeedRole` [wmax641/wap-iam-seed-role](https://github.com/wmax641/wap-iam-seed-role)
-
-Once deployed, the `IAMSeedRole` has a role assumption policy like below that allows it to be assumed from a Github Actions deployment from the [wmax641/wap-iam-accounts](https://github.com/wmax641/wap-iam-accounts) repo
-
-```json
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Principal": {
-                "Federated": "arn:aws:iam::071440211637:oidc-provider/token.actions.githubusercontent.com"
-            },
-            "Action": "sts:AssumeRoleWithWebIdentity",
-            "Condition": {
-                "StringEquals": {
-                    "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
-                },
-                "StringLike": {
-                    "token.actions.githubusercontent.com:sub": [
-                        "repo:wmax641/wap-iam-accounts:environment:production",
-                        "repo:wmax641/wap-iam-accounts:environment:development"
-                    ]
-                }
-            }
-        }
-    ]
-}
-```
+See [Terraform Bootstrap](./tf_bootstrap.md)
