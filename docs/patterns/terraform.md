@@ -1,6 +1,6 @@
 # Terraform Boilerplate Code
 
-### Makefile
+### Makefile (single account)
 ``` basemake
 ACCOUNT ?= $(shell aws sts get-caller-identity --query 'Account' --output text)
 BASE_NAME ?= $(shell basename $(CURDIR))
@@ -32,6 +32,64 @@ destroy:
 	terraform plan -destroy -input=false -out=tfplan-${ACCOUNT}
 	terraform apply -input=false tfplan-${ACCOUNT}
 ```
+### Makefile (mutliple workspace on same account)
+```basemake
+ACCOUNT_ID ?= $(shell aws sts get-caller-identity --query 'Account' --output text)
+TARGET_ENV ?= dev
+PROJECT_NAME ?=$(shell basename $(CURDIR))
+REGION ?= "ap-southeast-2"
+
+ifeq ($(shell printf '%s' '$(ACCOUNT_ID)' | wc -m),0)
+$(error ACCOUNT_ID is not set)
+endif
+
+WORKSPACE_EXISTS := $(shell terraform workspace list | grep -w $(TARGET_ENV) | wc -l)
+
+debug:
+	@echo "ACCOUNT_ID = ${ACCOUNT_ID}"
+	@echo "TARGET_ENV = ${TARGET_ENV}"
+	@echo "PROJECT_NAME = ${PROJECT_NAME}"
+	@echo "WORKSPACE_EXISTS = $(WORKSPACE_EXISTS)"
+
+init:
+	terraform init \
+		-backend-config="bucket=tf-${ACCOUNT_ID}" \
+		-backend-config="key=${PROJECT_NAME}" \
+		-backend-config="region=${REGION}"
+	
+ifeq ($(WORKSPACE_EXISTS),0)
+	terraform workspace new $(TARGET_ENV)
+endif
+
+fmt:
+	terraform fmt -write=true -recursive
+
+validate:
+	set -e
+	terraform fmt -write=false -recursive -check
+	terraform validate
+
+switch_workspace:
+	terraform workspace select ${TARGET_ENV}
+	terraform workspace show
+
+plan: switch_workspace
+	terraform plan -input=false -out=tfplan-${TARGET_ENV}-${ACCOUNT_ID} -var-file="vars/${TARGET_ENV}.tfvars"
+
+apply: switch_workspace
+	terraform apply -input=false tfplan-${TARGET_ENV}-${ACCOUNT_ID}
+
+deploy: switch_workspace plan apply
+
+destroy: switch_workspace
+	terraform plan -destroy -input=false -out=tfplan-${TARGET_ENV}-${ACCOUNT_ID} -var-file="vars/${TARGET_ENV}.tfvars"
+	terraform apply -input=false tfplan-${TARGET_ENV}-${ACCOUNT_ID}
+
+clean:
+	rm -f  tfplan-*  errored.tfstate 
+
+```
+
 
 ### Common
 #### main.tf
