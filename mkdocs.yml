@@ -6,6 +6,7 @@ nav:
   - Systems Administration:
     - "Shell cheatsheet" : "sysadmin/shell_cheatsheet.md"
     - "jq cheatsheet" : "sysadmin/jq_cheatsheet.md"
+    - "git cheatsheet" : "sysadmin/git_cheatsheet.md"
     - "Certificates and OpenSSL" : "sysadmin/certs.md"
   - Systems Engineering:
     - "Docker" : "syseng/docker.md"
