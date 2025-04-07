@@ -119,6 +119,16 @@ jq '.items[0:2] | .[].metadata.name'
 "bar-app"
 "foo-app"
 ```
+#### Convert JSON to CSV
+```bash
+["header0", "header1"] as $headers |
+($headers,
+  (.results[] | [ 
+    .field0,
+    .field1
+  ])
+) | @csv
+```
 ## Functions
 Get length of an array
 ```bash
