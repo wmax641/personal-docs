@@ -14,6 +14,7 @@ nav:
     - "Wireguard" : "syseng/wireguard.md"
     - "Github Actions" : "syseng/githubactions.md"
   - Patterns:
+    - "AGENTS.md" : "patterns/AGENTS.md"
     - "Dockerfile" : "patterns/docker.md"
     - "Kubernetes/K8s" : "patterns/k8s.md"
     - "Terraform (AWS)" : "patterns/terraform.md"
