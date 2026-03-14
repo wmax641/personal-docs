@@ -1,0 +1,3 @@
+interface:
+  display_name: "MkDocs Page Boilerplate"
+  short_description: "Create a docs page and nav entry"
