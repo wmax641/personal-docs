@@ -1,0 +1,108 @@
+<mxfile host="app.diagrams.net" modified="2024-03-30T13:43:03.294Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="UcTxu9xKBtLIDIT2w2E-" version="24.2.1" type="device">
+  <diagram name="Page-1" id="OBQbu1x6ryLhj_8AU_bW">
+    <mxGraphModel dx="1146" dy="745" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=2;strokeColor=#FF6666;" vertex="1" parent="1">
+          <mxGeometry x="250" y="160" width="400" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-2" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.cloud_2;fillColor=#F58534;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="240" y="378" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="nakQ2o1Xz4LBsLcteakF-6" target="nakQ2o1Xz4LBsLcteakF-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-13" value="Creates" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontStyle=1" vertex="1" connectable="0" parent="nakQ2o1Xz4LBsLcteakF-12">
+          <mxGeometry x="-0.3635" y="-2" relative="1" as="geometry">
+            <mxPoint x="-18" y="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-6" value="Github Actions&lt;b&gt;&lt;br&gt;wap-iam-seed-role&lt;br&gt;&lt;/b&gt;" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.github_code;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="150" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-23" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="nakQ2o1Xz4LBsLcteakF-8" target="nakQ2o1Xz4LBsLcteakF-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-24" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="nakQ2o1Xz4LBsLcteakF-8" target="nakQ2o1Xz4LBsLcteakF-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-25" value="&lt;b&gt;Creates&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="nakQ2o1Xz4LBsLcteakF-24">
+          <mxGeometry x="-0.4453" y="1" relative="1" as="geometry">
+            <mxPoint x="5" y="-20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-8" value="IAMSeedRole" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#DD344C;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.role;" vertex="1" parent="1">
+          <mxGeometry x="270" y="248" width="60.27" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="nakQ2o1Xz4LBsLcteakF-9" target="nakQ2o1Xz4LBsLcteakF-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-33" value="&lt;b&gt;Creates&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="nakQ2o1Xz4LBsLcteakF-32">
+          <mxGeometry x="-0.2148" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-9" value="&lt;div&gt;DeployRole&lt;/div&gt;" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#DD344C;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.role;" vertex="1" parent="1">
+          <mxGeometry x="371.87" y="300" width="60.27" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-10" value="ServiceRole" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#DD344C;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.role;" vertex="1" parent="1">
+          <mxGeometry x="371.87" y="203" width="60.27" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="nakQ2o1Xz4LBsLcteakF-11" target="nakQ2o1Xz4LBsLcteakF-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-15" value="Assumes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontStyle=1" vertex="1" connectable="0" parent="nakQ2o1Xz4LBsLcteakF-14">
+          <mxGeometry x="-0.5743" y="3" relative="1" as="geometry">
+            <mxPoint x="28" y="3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-11" value="Github Actions&lt;b&gt;&lt;br&gt;wap-iam-accounts&lt;br&gt;&lt;/b&gt;" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.github_code;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="240" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;" edge="1" parent="1" source="nakQ2o1Xz4LBsLcteakF-16" target="nakQ2o1Xz4LBsLcteakF-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-35" value="&lt;b&gt;Assumes&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="nakQ2o1Xz4LBsLcteakF-34">
+          <mxGeometry x="-0.7225" y="3" relative="1" as="geometry">
+            <mxPoint x="11" y="3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-16" value="Github Actions&lt;b&gt;&lt;br&gt;wap-some-system&lt;br&gt;&lt;/b&gt;" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.github_code;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="340" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-27" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=2;strokeColor=#FF6666;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="518.2" y="258" width="120" height="122" as="geometry" />
+        </mxCell>
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-26" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.virtual_private_cloud;fillColor=#F58534;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="491" y="237" width="50" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-28" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.aws_s3;" vertex="1" parent="1">
+          <mxGeometry x="582.2" y="320" width="40" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-29" value="" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lambda;" vertex="1" parent="1">
+          <mxGeometry x="529.2" y="272" width="36" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-30" value="" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.api_gateway;" vertex="1" parent="1">
+          <mxGeometry x="527.2" y="320" width="38" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-37" value="&lt;b&gt;Some System&lt;br&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="534.2" y="228" width="88" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;" edge="1" parent="1" source="nakQ2o1Xz4LBsLcteakF-10" target="nakQ2o1Xz4LBsLcteakF-29">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="470" y="223" />
+              <mxPoint x="470" y="290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nakQ2o1Xz4LBsLcteakF-40" value="&lt;b&gt;Assumes&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="nakQ2o1Xz4LBsLcteakF-39">
+          <mxGeometry x="0.0392" y="3" relative="1" as="geometry">
+            <mxPoint x="7" y="16" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
